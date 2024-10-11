@@ -19,7 +19,7 @@ import Card from "../components/Card.astro";
           <p class="text-destructive">Destructive Text</p>
           <a
             href="#"
-            class="">
+            class="link">
             Link
           </a>
         </div>
@@ -43,7 +43,13 @@ import Card from "../components/Card.astro";
         <Card
           variant="card"
           title="Card Title">
-          <p>This is a card component using our theme.</p>
+          <p>This is a card component using our theme, with a close button.</p>
+
+          <Button
+            slot="footer"
+            variant="primary"
+            >Close</Button
+          >
         </Card>
 
         <Card
@@ -87,10 +93,10 @@ import Card from "../components/Card.astro";
   </main>
 
   <div class="space-y-8 p-8 max-w-3xl">
-    <h1 class="block">Neo-Brutalism H1 Heading</h1>
-    <h2 class="block">Neo-Brutalism H2 Heading</h2>
-    <h3 class="block">Neo-Brutalism H3 Heading</h3>
-    <h4 class="block">Neo-Brutalism H4 Heading</h4>
-    <h5 class="block">Neo-Brutalism H5 Heading</h5>
+    <h1 class="block">H1 Heading</h1>
+    <h2 class="block">H2 Heading</h2>
+    <h3 class="block">H3 Heading</h3>
+    <h4 class="block">H4 Heading</h4>
+    <h5 class="block">H5 Heading</h5>
   </div>
 </Layout>
