@@ -21,15 +21,15 @@ const card = cva(
 
 interface Props extends HTMLAttributes<"div">, VariantProps<typeof card> {
   title?: string;
-
   titleClass?: string;
+  footerClass?: string;
 }
 
 const {
   title,
-
   variant = "primary",
   titleClass,
+  footerClass,
   class: className,
   ...rest
 } = Astro.props;
@@ -40,12 +40,14 @@ const {
   class={cn(card({ variant }), className)}>
   {
     title && (
-      <span
-        class={cn("text-xl font-bold mb-4 border-b-2 mb-2 block", titleClass)}>
+      <span class={cn("text-xl font-bold mb-4 border-b-2 block", titleClass)}>
         {title}
       </span>
     )
   }
 
   <slot />
+  <div class={cn("flex justify-end", footerClass)}>
+    <slot name="footer" />
+  </div>
 </div>

@@ -81,7 +81,7 @@
       "Helvetica Neue", sans-serif;
     @apply bg-background text-foreground font-semibold;
   }
-  a {
+  a.link {
     @apply inline-block bg-primary text-primary-foreground font-bold text-lg px-4 border-b-4 border-b-black transition-all duration-300 hover:bg-background hover:text-foreground relative;
   }
   h1 {
