@@ -1,0 +1,77 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@utils/cn";
+
+const button = cva(
+  "rounded-xl font-bold py-3 px-6 text-lg border-2 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all duration-150",
+  {
+    variants: {
+      variant: {
+        primary: ["bg-primary", "text-primary-foreground"],
+        secondary: ["bg-secondary", "text-secondary-foreground"],
+        accent: ["bg-accent", "text-accent-foreground"],
+        destructive: ["bg-destructive", "text-destructive-foreground"],
+        outline: [
+          "bg-transparent",
+          "border-2",
+          "border-primary",
+          "text-primary",
+        ],
+        ghost: [
+          "bg-transparent",
+          "text-foreground",
+          "hover:bg-muted",
+          "hover:border-2",
+        ],
+        link: [
+          "text-primary",
+          "underline",
+          "hover:text-primary/80",
+          "py-1",
+          "px-2",
+        ],
+      },
+      size: {
+        default: [
+          "py-3",
+          "px-6",
+          "text-lg",
+          "shadow-[6px_6px_0_0_rgba(0,0,0,1)]",
+          "hover:shadow-[3px_3px_0_0_rgba(0,0,0,1)]",
+        ],
+        sm: [
+          "py-2",
+          "px-4",
+          "text-base",
+          "shadow-[4px_4px_0_0_rgba(0,0,0,1)]",
+          "hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)]",
+        ],
+        lg: [
+          "py-4",
+          "px-8",
+          "text-xl",
+          "shadow-[8px_8px_0_0_rgba(0,0,0,1)]",
+          "hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)]",
+        ],
+      },
+    },
+  }
+);
+export interface Props
+  extends HTMLAttributes<"button">,
+    VariantProps<typeof button> {}
+
+const {
+  variant = "primary",
+  size = "default",
+  class: className,
+  ...rest
+} = Astro.props as Props;
+---
+
+<button
+  class={cn(button({ variant, size }), className)}
+  {...rest}>
+  <slot />
+</button>

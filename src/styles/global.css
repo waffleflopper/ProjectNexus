@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 213 38% 91%;
+    --foreground: 0 0% 0%;
+
+    --card: 213 38% 96%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 213 38% 91%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 81 78% 45%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 220 75% 73%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 47 100% 67%;
+    --accent-foreground: 0 0% 0%;
+
+    --muted: 213 38% 86%;
+    --muted-foreground: 0 0% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 38% 16%;
+    --input: 213 38% 76%;
+    --ring: 78 80% 55%;
+
+    --chart-1: var(--primary);
+    --chart-2: var(--secondary);
+    --chart-3: var(--accent);
+    --chart-4: var(--destructive);
+    --chart-5: var(--border);
+  }
+
+  .dark {
+    --background: 113 7% 18%;
+    --foreground: 72 13% 92%;
+
+    --card: 113 7% 23%;
+    --card-foreground: 72 13% 92%;
+
+    --popover: 113 7% 18%;
+    --popover-foreground: 72 13% 92%;
+
+    --primary: 78 80% 55%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 220 75% 73%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 47 100% 67%;
+    --accent-foreground: 47 100% 7%;
+
+    --muted: 113 7% 28%;
+    --muted-foreground: 72 13% 62%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 113 7% 10%;
+    --input: 113 7% 28%;
+    --ring: 78 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    @apply bg-background text-foreground font-semibold;
+  }
+  a {
+    @apply inline-block bg-primary text-primary-foreground font-bold text-lg px-4 border-b-4 border-b-black transition-all duration-300 hover:bg-background hover:text-foreground relative;
+  }
+  h1 {
+    @apply text-5xl font-black mb-6 text-primary-foreground
+         relative inline-block
+         bg-primary py-2 px-4
+         border-4 border-black
+         shadow-[6px_6px_0_0_rgba(0,0,0,1)];
+  }
+
+  h2 {
+    @apply text-3xl font-extrabold mb-4 text-foreground
+           border-b-4 border-secondary pb-2
+           inline-block;
+  }
+
+  h3 {
+    @apply text-2xl font-bold mb-3 text-accent-foreground
+           bg-accent py-1 px-3
+           inline-block
+           transform -skew-x-6;
+  }
+
+  h4 {
+    @apply text-xl font-semibold mb-2 text-foreground
+           border-l-4 border-secondary pl-3;
+  }
+
+  h5 {
+    @apply text-lg font-bold mb-2 text-foreground
+         uppercase tracking-wide
+         bg-secondary py-1 px-2
+         inline-block;
+  }
+}
