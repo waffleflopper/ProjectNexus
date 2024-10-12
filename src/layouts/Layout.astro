@@ -32,8 +32,9 @@ const { title } = Astro.props;
     />
     <title>{title}</title>
   </head>
-  <body class="mt-20">
+  <body class="mt-8">
     <FloatingNav
+      hideOnScroll={false}
       items={[
         { label: "Home", href: "/" },
         { label: "Components", href: "/components" },
