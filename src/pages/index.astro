@@ -41,42 +41,45 @@ import Card from "../components/Card.astro";
       <h2 class="text-2xl font-semibold">Cards</h2>
       <div class="grid grid-cols-2 gap-4">
         <Card
-          variant="card"
+          variant="accent"
           title="Card Title">
-          <p>This is a card component using our theme, with a close button.</p>
+          <p>This is a card component using the accent theme.</p>
+        </Card>
+
+        <Card
+          variant="card"
+          title="Popover Card">
+          <p>This simulates a popover component.</p>
 
           <Button
             slot="footer"
             variant="primary"
+            size="sm"
+            class="mt-4"
             >Close</Button
           >
-        </Card>
-
-        <Card
-          variant="primary"
-          title="Popover Card">
-          <p>This simulates a popover component.</p>
         </Card>
       </div>
     </section>
 
     <section class="space-y-4">
       <h2 class="text-2xl font-semibold">Buttons</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="space-x-4">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="accent">Accent</Button>
-          <Button variant="destructive">Destructive</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
-          <Button variant="link">Link</Button>
-        </div>
-        <div class="space-x-4">
-          <Button size="sm">Small</Button>
-          <Button size="default">Default</Button>
-          <Button size="lg">Large</Button>
-        </div>
+      <div class="space-x-4 space-y-4">
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="accent">Accent</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button
+          variant="icon"
+          size="icon"
+          >icon</Button
+        >
+
+        <Button size="sm">Small</Button>
+        <Button size="default">Default</Button>
+        <Button size="lg">Large</Button>
       </div>
     </section>
 
