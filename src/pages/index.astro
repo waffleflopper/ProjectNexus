@@ -5,14 +5,20 @@ import Card from "@components/Card.astro";
 import Tabs from "@components/tabs/Tabs.astro";
 import TabTrigger from "@components/tabs/TabTrigger.astro";
 import TabPanel from "@components/tabs/TabPanel.astro";
+import { AddToastButton, Toast } from "@components/toasts";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="p-8 space-y-8">
-    <h1 class="place-self-center">Theme Showcase</h1>
-
+  <main class="p-8 space-y-12">
+    <h1 class="place-self-center mb-0">Showcase</h1>
+    <p>
+      Just some stuff to test and demo the components for my next personal
+      project. Using Astro with regular old typescript, React (with atoms for
+      state so it works with Astro), and TailwindCSS.
+    </p>
+    <p>Going for a neo-brutalism style.</p>
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Text Colors</h2>
+      <h3 class="text-2xl font-semibold">Text</h3>
       <div class="flex justify-start gap-4">
         <div>
           <p class="text-foreground">Primary Text</p>
@@ -30,7 +36,7 @@ import TabPanel from "@components/tabs/TabPanel.astro";
     </section>
 
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Colors</h2>
+      <h3 class="text-2xl font-semibold">Colors</h3>
       <div class="grid grid-cols-3 gap-4">
         <Card variant="primary">Primary</Card>
         <Card variant="secondary">Secondary</Card>
@@ -40,8 +46,29 @@ import TabPanel from "@components/tabs/TabPanel.astro";
       </div>
     </section>
 
+    <section class="space-y-4 space-x-4">
+      <h3 class="text-2xl font-semibold">Toasts (React)</h3>
+      <div class="flex gap-4">
+        <AddToastButton
+          client:load
+          type="success"
+          message="This is a success toast!"
+        />
+        <AddToastButton
+          client:load
+          type="info"
+          message="This is an info toast!"
+        />
+        <AddToastButton
+          client:load
+          type="error"
+          message="This is an error toast!"
+        />
+      </div>
+    </section>
+
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Headings</h2>
+      <h3 class="text-2xl font-semibold">Headings</h3>
       <div class="grid grid-cols-2 gap-4">
         <div class="space-y-4">
           <h1 class="block">H1 Heading</h1>
@@ -56,7 +83,7 @@ import TabPanel from "@components/tabs/TabPanel.astro";
     </section>
 
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Cards</h2>
+      <h3 class="text-2xl font-semibold">Cards</h3>
       <div class="grid grid-cols-2 gap-4">
         <Card
           variant="accent"
@@ -81,7 +108,7 @@ import TabPanel from "@components/tabs/TabPanel.astro";
     </section>
 
     <section class="max-w-3xl">
-      <h2 class="text-2xl font-semibold">Tabs</h2>
+      <h3 class="text-2xl font-semibold">Tabs (JS)</h3>
       <Tabs>
         <TabTrigger
           id="tab1"
@@ -102,26 +129,68 @@ import TabPanel from "@components/tabs/TabPanel.astro";
         <TabPanel
           id="panel1"
           slot="panel">
-          <h2>Content for Tab 1</h2>
-          <p>This is the content for the first tab.</p>
+          <h4>Content for Tab 1</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
+            vitae beatae in dolor aliquam et deserunt rem nemo optio numquam
+            pariatur nihil dolores odio, vero ut excepturi ad harum ullam? Iusto
+            animi nostrum fugiat pariatur nisi optio amet ratione cumque
+            inventore error, repudiandae ipsum possimus aperiam repellendus
+            itaque consequatur quae accusamus accusantium nobis. Aspernatur
+            dolore deleniti quam corrupti distinctio ipsum.
+          </p>
         </TabPanel>
         <TabPanel
           id="panel2"
           slot="panel">
-          <h2>Content for Tab 2</h2>
-          <p>This is the content for the second tab.</p>
+          <h4>Content for Tab 2</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
+            repudiandae eligendi aspernatur temporibus, odio veniam! Ab, sed
+            adipisci perspiciatis dolore suscipit vero? Laborum, necessitatibus.
+            Molestiae reiciendis quibusdam optio repellendus quaerat. Iure velit
+            debitis quae harum vel officiis rerum ullam totam, repellendus
+            accusantium fuga obcaecati natus accusamus aliquam ratione odio
+            blanditiis nesciunt hic unde ad eveniet id ipsum! Cumque,
+            consectetur nemo! Deleniti, aspernatur debitis! Placeat dolorem,
+            quibusdam, adipisci sequi consectetur distinctio porro minima aut
+            veniam expedita architecto esse quo, animi possimus qui totam
+            voluptatem provident in blanditiis molestias nulla eum! Id? Rerum
+            unde, assumenda dolore reprehenderit iste eum laborum minima fuga
+            animi vitae fugiat, ratione natus nulla similique dolorum? Tempore
+            saepe at veniam maxime, ipsum in a sunt facilis dolorum architecto!
+            Nihil quam velit, molestiae aperiam nulla modi fugit, veritatis eum,
+            ea tempore amet animi explicabo est temporibus ex excepturi
+            doloribus odit dolorum! Cum, dolore laboriosam atque placeat hic
+            quos maiores? Laboriosam tempore, unde enim repudiandae quam vero
+            vel, ipsam nemo natus odit sit neque necessitatibus velit, incidunt
+            facere. Assumenda officia magnam nobis tempora ipsam facere
+            perspiciatis, aliquid cupiditate asperiores. Earum?
+          </p>
         </TabPanel>
         <TabPanel
           id="panel3"
           slot="panel">
-          <h2>Content for Tab 3</h2>
-          <p>This is the content for the third tab.</p>
+          <h4>Content for Tab 3</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+            possimus minima alias eos impedit expedita in. Magnam quaerat
+            perferendis nemo animi commodi quia, architecto blanditiis nesciunt,
+            tenetur nihil reprehenderit! Nam. In optio quam nostrum,
+            exercitationem doloribus incidunt eos aliquid quae? Omnis dicta
+            molestias esse suscipit quod sit accusamus magnam, at doloremque
+            harum quibusdam ut obcaecati, ipsa dolore. Perferendis, voluptate
+            quaerat! Ipsa ducimus laboriosam nam soluta suscipit, cupiditate
+            harum sed nulla nostrum laborum sit facere perferendis debitis
+            cumque totam ratione atque labore quis accusantium? Excepturi
+            voluptas facilis quo, ipsum unde neque.
+          </p>
         </TabPanel>
       </Tabs>
     </section>
 
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Buttons</h2>
+      <h3 class="text-2xl font-semibold">Buttons</h3>
       <div class="space-x-4 space-y-4">
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -142,7 +211,7 @@ import TabPanel from "@components/tabs/TabPanel.astro";
     </section>
 
     <section class="space-y-4">
-      <h2 class="text-2xl font-semibold">Chart Colors</h2>
+      <h3 class="text-2xl font-semibold">Chart Colors</h3>
       <div class="flex space-x-4">
         <Card class="bg-chart-1" />
         <Card class="bg-chart-2" />
