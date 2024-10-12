@@ -1,7 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Button from "../components/button.astro";
-import Card from "../components/Card.astro";
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/button.astro";
+import Card from "@components/Card.astro";
+import Tabs from "@components/tabs/Tabs.astro";
+import TabTrigger from "@components/tabs/TabTrigger.astro";
+import TabPanel from "@components/tabs/TabPanel.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -92,6 +95,45 @@ import Card from "../components/Card.astro";
         <Card class="bg-chart-4" />
         <Card class="bg-chart-5" />
       </div>
+    </section>
+
+    <section class="max-w-3xl">
+      <Tabs>
+        <TabTrigger
+          id="tab1"
+          slot="tab"
+          >Tab 1</TabTrigger
+        >
+        <TabTrigger
+          id="tab2"
+          slot="tab"
+          >Tab 2</TabTrigger
+        >
+        <TabTrigger
+          id="tab3"
+          slot="tab"
+          >Tab 3</TabTrigger
+        >
+
+        <TabPanel
+          id="panel1"
+          slot="panel">
+          <h2>Content for Tab 1</h2>
+          <p>This is the content for the first tab.</p>
+        </TabPanel>
+        <TabPanel
+          id="panel2"
+          slot="panel">
+          <h2>Content for Tab 2</h2>
+          <p>This is the content for the second tab.</p>
+        </TabPanel>
+        <TabPanel
+          id="panel3"
+          slot="panel">
+          <h2>Content for Tab 3</h2>
+          <p>This is the content for the third tab.</p>
+        </TabPanel>
+      </Tabs>
     </section>
   </main>
 

@@ -1,0 +1,53 @@
+---
+import { cn } from "@utils/cn";
+
+interface Props {
+  class?: string;
+  listClass?: string;
+}
+
+const { class: className = "", listClass = "" } = Astro.props as Props;
+---
+
+<div class={cn("bg-background  rounded-lg ", className)}>
+  <div
+    class={cn("flex", listClass)}
+    role="tablist">
+    <slot name="tab" />
+  </div>
+  <div
+    class="border-4 border-black shadow-[8px_8px_0_0_rgba(0,0,0,1)] rounded-b-lg rounded-r-lg">
+    <slot name="panel" />
+  </div>
+</div>
+
+<script is:inline>
+  function setupTabs() {
+    const tabButtons = document.querySelectorAll("[data-tab-button]");
+    const tabContents = document.querySelectorAll("[data-tab-content]");
+
+    function setActiveTab(index) {
+      tabButtons.forEach((button, i) => {
+        button.setAttribute("aria-selected", i === index ? "true" : "false");
+        button.classList.toggle("bg-primary", i === index);
+        button.classList.toggle("text-primary-foreground", i === index);
+      });
+      tabContents.forEach((content, i) => {
+        content.classList.toggle("hidden", i !== index);
+      });
+    }
+
+    tabButtons.forEach((button, index) => {
+      button.addEventListener("click", () => setActiveTab(index));
+    });
+
+    // Set the first tab as active by default
+    setActiveTab(0);
+  }
+
+  // Run setup on initial load
+  setupTabs();
+
+  // Re-run setup on page transitions (for Astro View Transitions)
+  document.addEventListener("astro:page-load", setupTabs);
+</script>
