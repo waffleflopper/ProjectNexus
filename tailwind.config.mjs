@@ -52,9 +52,16 @@ export default {
       },
       boxShadow: {
         light: "4px 4px 0px 0px #000",
-        dark: "4px 4px 0px 0px #000",
+        dark: "6px 6px 0px 0px #000",
+        "dark-small": "3px 3px 0px 0px #000",
+        "dark-large": "8px 8px 0px 0px #000",
+        "dark-xsmall": "2px 2px 0px 0px #000",
+        "dark-medium": "4px 4px 0px 0px #000",
       },
       translate: {
+        large: "8px",
+        medium: "6px",
+        small: "4px",
         boxShadowX: "4px",
         boxShadowY: "4px",
         reverseBoxShadowX: "-4px",
