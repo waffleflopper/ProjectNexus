@@ -1,5 +1,6 @@
 ---
 import FloatingNav from "@components/FloatingNav.astro";
+import { ToastList } from "@components/toasts";
 import "@styles/global.css";
 
 interface Props {
@@ -37,11 +38,12 @@ const { title } = Astro.props;
       hideOnScroll={false}
       items={[
         { label: "Home", href: "/" },
-        { label: "Components", href: "/components" },
-        { label: "Themes", href: "/themes" },
-        { label: "About", href: "/about" },
+        { label: "NavItem", href: "#" },
+        { label: "NavItem", href: "#" },
+        { label: "Contact", href: "/contact" },
       ]}
     />
+    <ToastList client:load />
     <slot />
   </body>
 </html>

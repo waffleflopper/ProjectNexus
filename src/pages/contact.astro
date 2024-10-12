@@ -1,0 +1,23 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Button from "@components/button.astro";
+import Card from "@components/Card.astro";
+import Tabs from "@components/tabs/Tabs.astro";
+import TabTrigger from "@components/tabs/TabTrigger.astro";
+import TabPanel from "@components/tabs/TabPanel.astro";
+import { AddToastButton, Toast } from "@components/toasts";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="p-8 space-y-12">
+    <h1 class="place-self-center mb-0">Contact Me</h1>
+    <p>If you'd like to get in touch with me, shoot me an email.</p>
+    <p>
+      <a
+        class="link"
+        href="mailto:robertbaddeley@gmail.com"
+        >robertbaddeley@gmail.com</a
+      >
+    </p>
+  </main>
+</Layout>
